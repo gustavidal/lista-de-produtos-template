@@ -14,7 +14,8 @@ body {
 }
 
 #container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
@@ -22,6 +23,7 @@ body {
 
 .card {
     background-color: #fff;
+    border-radius: 12px;
     width: 250px;
     padding: 20px 16px;
     display: flex;
@@ -32,24 +34,22 @@ body {
     text-align: center;
 }
 
-.informatica, .informatica img {
-    border-radius: 12px;
+.informatica {
     border: 2px solid #00aeef;
 }
 
-.eletronica, .eletronica img {
-    border-radius: 12px;
+.eletronica {
     border: 2px solid #00ff7f;
 }
 
 .card img {
-    width: 90%;
-    height: 90%;
-    object-fit: cover;
+    width: 170px;
+    height: 190px;
+    object-fit: contain;
 }
 
 .card h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #111;
     margin-bottom: 4px;
@@ -71,5 +71,6 @@ body {
 }
 
 .card h6 {
-    font-size: 0.6em;
+    font-size: 1em;
+    color: rgb(172, 172, 6);
 }
