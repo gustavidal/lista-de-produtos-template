@@ -5,12 +5,12 @@ import produtos from "./produtos.json" with { type: "json" }
 function definirClasse(categoria) {
     let classe
 
-    if (categoria == 'Informática') {
+    if (categoria === 'Informática') {
         classe = 'informatica'
-    } else if (categoria == 'Eletrônicos') {
+    } else if (categoria === 'Eletrônicos') {
         classe = 'eletronica'
     } else {
-        return false
+        classe = ''
     }
 
     return classe
@@ -45,7 +45,10 @@ function criarCard(produto) {
     descricao.textContent = produto.descricao
 
     const valor = document.createElement('span')
-    valor.textContent = `R$ ${Number(produto.preco)}`
+    valor.textContent = Number(produto.preco).toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+    })
 
     const categoria = document.createElement('h4')
     categoria.textContent = produto.categoria
