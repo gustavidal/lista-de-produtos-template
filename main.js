@@ -1,6 +1,6 @@
 'use strict'
 
-import produtos from "./produtos.json" with { type: "json" }
+import produtos from "./produtos.json" assert { type: "json" }
 
 function definirClasse(categoria) {
     let classe
